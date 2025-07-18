@@ -23,27 +23,6 @@
     <style>
         html { scroll-behavior: smooth; }
         body { font-family: 'Cairo', sans-serif; background-color: #f7fafc; }
-        :root {
-            --primary-color: #00796B; /* Teal */
-            --primary-dark: #004D40;
-            --secondary-color: #FFA726; /* Orange */
-            --secondary-dark: #C77700;
-            --accent-color-purple: #8E44AD; /* Purple */
-            --accent-dark-purple: #6C3483;
-            --accent-color-green: #27AE60; /* Green */
-            --accent-dark-green: #1E8449;
-            --whatsapp-color: #25D366;
-            --whatsapp-dark: #1DA851;
-            --text-color: #37474F;
-            --heading-color: #2c3e50;
-        }
-        .bg-primary { background-color: var(--primary-color); }
-        .bg-secondary { background-color: var(--secondary-color); }
-        .text-primary { color: var(--primary-color); }
-        .text-secondary { color: var(--secondary-color); }
-        .border-secondary { border-color: var(--secondary-color); }
-        .border-accent-purple { border-color: var(--accent-color-purple); }
-        .border-accent-green { border-color: var(--accent-color-green); }
         .cairo-bold { font-weight: 700; }
         .cairo-extrabold { font-weight: 900; }
 
@@ -51,29 +30,54 @@
             font-family: 'Cairo', sans-serif;
             font-weight: 900;
             font-size: 2.5rem;
-            color: var(--heading-color);
+            color: #2c3e50;
             margin-bottom: 1rem;
             text-align: center;
         }
         .section-subtitle {
             text-align: center;
             font-size: 1.125rem;
-            color: var(--text-color);
+            color: #37474F;
             max-width: 800px;
             margin: 0 auto 3rem auto;
         }
-        /* Enhanced 3D Button Style */
-        .btn {
-            @apply inline-block font-bold py-3 px-6 rounded-lg text-white transition-all duration-200 transform shadow-lg border-b-4;
+        
+        .button {
+            display: inline-block;
+            padding: 16px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+            margin: 10px;
         }
-        .btn:active {
-            @apply transform translate-y-1 border-b-2 shadow-md;
+        .button:hover {
+            transform: scale(1.03);
         }
-        .btn-primary { @apply bg-primary hover:bg-teal-700 border-primary-dark; }
-        .btn-secondary { @apply bg-secondary hover:bg-orange-500 border-secondary-dark; }
-        .btn-whatsapp { @apply bg-whatsapp hover:bg-green-500 border-whatsapp-dark; }
-        .btn-green { @apply bg-accent-green hover:bg-green-600 border-accent-dark-green; }
-        .btn-purple { @apply bg-accent-purple hover:bg-purple-700 border-accent-dark-purple; }
+        .button:active {
+            transform: scale(0.98);
+        }
+
+        .btn-orange { background-color: #FFA726; }
+        .btn-orange:hover { background-color: #FB8C00; box-shadow: 0 6px 20px rgba(255, 167, 38, 0.4); }
+        
+        .btn-purple { background-color: #8E44AD; }
+        .btn-purple:hover { background-color: #7D3C98; box-shadow: 0 6px 20px rgba(142, 68, 173, 0.4); }
+
+        .btn-green { background-color: #27AE60; }
+        .btn-green:hover { background-color: #229954; box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4); }
+
+        .btn-whatsapp { background-color: #25D366; }
+        .btn-whatsapp:hover { background-color: #1ebd58; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); }
+
+        .btn-free-lesson { background-color: #076f4e; }
+        .btn-free-lesson:hover { background-color: #055f43; box-shadow: 0 6px 20px rgba(7, 111, 78, 0.4); }
+
     </style>
 </head>
 
@@ -85,18 +89,18 @@
             <a href="#home" class="flex items-center space-x-2 space-x-reverse">
                 <img src="logo.jpg" alt="شعار أكاديمية ورثة الكتاب" class="h-16 w-16">
                 <div class="text-right">
-                    <h1 class="text-xl cairo-extrabold text-primary">أكــاديمية ورثــة الـكتاب</h1>
+                    <h1 class="text-xl cairo-extrabold text-teal-700">أكــاديمية ورثــة الـكتاب</h1>
                     <p class="text-xs text-gray-500">لتعليم اللغة العربية والقرآن الكريم</p>
                 </div>
             </a>
             <nav class="hidden lg:flex items-center space-x-8 space-x-reverse text-lg">
-                <a href="#about" class="hover:text-secondary">عن الأكاديمية</a>
-                <a href="#courses" class="hover:text-secondary">برامجنا</a>
-                <a href="#teachers" class="hover:text-secondary">معلمونا</a>
-                <a href="#testimonials" class="hover:text-secondary">آراء الطلاب</a>
-                <a href="#contact" class="hover:text-secondary">تواصل معنا</a>
+                <a href="#about" class="hover:text-orange-500">عن الأكاديمية</a>
+                <a href="#courses" class="hover:text-orange-500">برامجنا</a>
+                <a href="#teachers" class="hover:text-orange-500">معلمونا</a>
+                <a href="#testimonials" class="hover:text-orange-500">آراء الطلاب</a>
+                <a href="#contact" class="hover:text-orange-500">تواصل معنا</a>
             </nav>
-            <div class="lg:hidden"><button @click="openMenu = !openMenu"><i class="fas fa-bars text-2xl text-primary"></i></button></div>
+            <div class="lg:hidden"><button @click="openMenu = !openMenu"><i class="fas fa-bars text-2xl text-teal-700"></i></button></div>
         </div>
         <div x-show="openMenu" @click.away="openMenu = false" class="lg:hidden bg-white border-t" x-transition>
             <a href="#about" @click="openMenu = false" class="block text-center py-3 px-4 text-lg hover:bg-gray-100">عن الأكاديمية</a>
@@ -112,21 +116,21 @@
         <section id="home" class="relative bg-gray-800 text-white">
             <div class="container mx-auto px-6 py-20 lg:py-32 grid lg:grid-cols-2 gap-12 items-center">
                 <div class="text-center lg:text-right">
-                    <h1 class="cairo-extrabold text-4xl md:text-6xl leading-tight text-secondary">أكــاديمية ورثــة الـكتاب</h1>
+                    <h1 class="cairo-extrabold text-4xl md:text-6xl leading-tight text-orange-400">أكــاديمية ورثــة الـكتاب</h1>
                     <p class="cairo-bold text-xl text-white/90 my-4">لتعليم اللغة العربية وتحفيظ القرآن الكريم والعلوم الشرعية</p>
                     <p class="text-lg mb-8">تعلم مع نخبة من خريجي كليات الأزهر الشريف وكليات التربية المعتمدين.</p>
-                    <a href="https://wa.me/2001040580208" target="_blank" class="btn btn-secondary text-lg">ابدأ التعلم الآن</a>
+                    <a href="https://wa.me/2001040580208" target="_blank" class="button btn-orange">ابدأ التعلم الآن</a>
                 </div>
                 <div class="relative">
                     <img src="hero.jpg" alt="طلاب يتعلمون عن بعد" class="rounded-2xl shadow-2xl w-full">
                 </div>
             </div>
-            <div class="bg-white text-text-color py-8">
+            <div class="bg-white text-gray-700 py-8">
                 <div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center items-center">
-                    <div><p class="text-3xl font-bold text-primary">750+</p><p>طالب وطالبة</p></div>
-                    <div><p class="text-3xl font-bold text-primary">10+</p><p>سنوات خبرة</p></div>
-                    <div><p class="text-3xl font-bold text-primary">98%</p><p>نسبة الرضا</p></div>
-                    <div><a href="#courses" class="btn btn-primary">تعرف على برامجنا</a></div>
+                    <div><p class="text-3xl font-bold text-teal-600">750+</p><p>طالب وطالبة</p></div>
+                    <div><p class="text-3xl font-bold text-teal-600">10+</p><p>سنوات خبرة</p></div>
+                    <div><p class="text-3xl font-bold text-teal-600">98%</p><p>نسبة الرضا</p></div>
+                    <div><a href="#courses" class="button bg-teal-600 hover:bg-teal-700">تعرف على برامجنا</a></div>
                 </div>
             </div>
         </section>
@@ -139,10 +143,10 @@
                     <p class="section-subtitle">مؤسسة تعليمية رائدة متخصصة في تعليم القرآن الكريم مع التفسير وأسباب النزول، واللغة العربية والعلوم الشرعية، نفخر بفريق من أفضل المعلمين المتخصصين من خريجي الأزهر الشريف.</p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:-translate-y-2 transition-transform"><div class="text-secondary text-4xl mb-3"><i class="fas fa-university"></i></div><h3 class="text-xl font-bold text-primary">خريجو الأزهر الشريف</h3><p>معلمون متخصصون من خريجي كليات الأزهر الشريف وكليات التربية.</p></div>
-                    <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:-translate-y-2 transition-transform"><div class="text-secondary text-4xl mb-3"><i class="fas fa-medal"></i></div><h3 class="text-xl font-bold text-primary">أوائل الخريجين</h3><p>نخبة من المعلمين المتفوقين أكاديمياً مع سجل حافل بالإنجازات.</p></div>
-                    <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:-translate-y-2 transition-transform"><div class="text-secondary text-4xl mb-3"><i class="fas fa-book-reader"></i></div><h3 class="text-xl font-bold text-primary">إجازات في القراءات</h3><p>معلمون مجازون في القراءات القرآنية المختلفة بأسانيد معتمدة.</p></div>
-                    <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:-translate-y-2 transition-transform"><div class="text-secondary text-4xl mb-3"><i class="fas fa-chalkboard-teacher"></i></div><h3 class="text-xl font-bold text-primary">تدريس تفاعلي</h3><p>أساليب تعليمية حديثة تجمع بين الأصالة والمعاصرة.</p></div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:-translate-y-2 transition-transform"><div class="text-orange-500 text-4xl mb-3"><i class="fas fa-university"></i></div><h3 class="text-xl font-bold text-teal-700">خريجو الأزهر الشريف</h3><p>معلمون متخصصون من خريجي كليات الأزهر الشريف وكليات التربية.</p></div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:-translate-y-2 transition-transform"><div class="text-orange-500 text-4xl mb-3"><i class="fas fa-medal"></i></div><h3 class="text-xl font-bold text-teal-700">أوائل الخريجين</h3><p>نخبة من المعلمين المتفوقين أكاديمياً مع سجل حافل بالإنجازات.</p></div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:-translate-y-2 transition-transform"><div class="text-orange-500 text-4xl mb-3"><i class="fas fa-book-reader"></i></div><h3 class="text-xl font-bold text-teal-700">إجازات في القراءات</h3><p>معلمون مجازون في القراءات القرآنية المختلفة بأسانيد معتمدة.</p></div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:-translate-y-2 transition-transform"><div class="text-orange-500 text-4xl mb-3"><i class="fas fa-chalkboard-teacher"></i></div><h3 class="text-xl font-bold text-teal-700">تدريس تفاعلي</h3><p>أساليب تعليمية حديثة تجمع بين الأصالة والمعاصرة.</p></div>
                 </div>
             </div>
         </section>
@@ -165,7 +169,7 @@
                                 <div class="space-y-3"><div class="flex items-center space-x-3 space-x-reverse"><div class="w-2 h-2 bg-orange-600 rounded-full"></div><span class="text-gray-700 cairo-bold">تحفيظ القرآن الكريم</span></div><div class="flex items-center space-x-3 space-x-reverse"><div class="w-2 h-2 bg-orange-600 rounded-full"></div><span class="text-gray-700 cairo-bold">تعليم اللغة العربية</span></div><div class="flex items-center space-x-3 space-x-reverse"><div class="w-2 h-2 bg-orange-600 rounded-full"></div><span class="text-gray-700 cairo-bold">العلوم الشرعية</span></div><div class="flex items-center space-x-3 space-x-reverse"><div class="w-2 h-2 bg-orange-600 rounded-full"></div><span class="text-gray-700 cairo-bold">الفقه الإسلامي</span></div><div class="flex items-center space-x-3 space-x-reverse"><div class="w-2 h-2 bg-orange-600 rounded-full"></div><span class="text-gray-700 cairo-bold">السيرة النبوية</span></div></div>
                                 <div class="border-t pt-6"><div class="flex justify-between items-center mb-4"><i class="fas fa-clock w-5 h-5 text-gray-400"></i><span class="text-gray-700 font-medium cairo-bold">حصة كاملة (60 دقيقة)</span></div><div class="space-y-3"><div class="bg-orange-50 p-4 rounded-lg border border-orange-200"><div class="flex justify-between items-center"><div class="flex items-center space-x-2 space-x-reverse"><i class="fas fa-dollar-sign w-4 h-4 text-orange-600"></i><span class="text-orange-600 font-bold text-lg cairo-bold">35 دولار</span></div><span class="text-gray-700 font-medium cairo-bold">4 حصص شهرياً</span></div></div><div class="bg-orange-50 p-4 rounded-lg border border-orange-200"><div class="flex justify-between items-center"><div class="flex items-center space-x-2 space-x-reverse"><i class="fas fa-dollar-sign w-4 h-4 text-orange-600"></i><span class="text-orange-600 font-bold text-lg cairo-bold">60 دولار</span></div><span class="text-gray-700 font-medium cairo-bold">8 حصص شهرياً</span></div></div></div></div>
                             </div>
-                            <a href="https://wa.me/2001040580208" target="_blank" rel="noopener noreferrer" class="block w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105 font-bold text-center cairo-bold">أشترك الآن</a>
+                            <a href="https://wa.me/2001040580208" target="_blank" rel="noopener noreferrer" class="button btn-orange w-full mt-6">أشترك الآن</a>
                         </div>
                     </div>
                     <!-- Course 2 -->
@@ -176,7 +180,7 @@
                                 <div class="space-y-3"><div class="flex items-center space-x-3 space-x-reverse"><div class="w-2 h-2 bg-purple-600 rounded-full"></div><span class="text-gray-700 cairo-bold">تعلم الحروف</span></div><div class="flex items-center space-x-3 space-x-reverse"><div class="w-2 h-2 bg-purple-600 rounded-full"></div><span class="text-gray-700 cairo-bold">القراءة والكتابة</span></div><div class="flex items-center space-x-3 space-x-reverse"><div class="w-2 h-2 bg-purple-600 rounded-full"></div><span class="text-gray-700 cairo-bold">النحو والصرف</span></div><div class="flex items-center space-x-3 space-x-reverse"><div class="w-2 h-2 bg-purple-600 rounded-full"></div><span class="text-gray-700 cairo-bold">الأدب العربي</span></div><div class="flex items-center space-x-3 space-x-reverse"><div class="w-2 h-2 bg-purple-600 rounded-full"></div><span class="text-gray-700 cairo-bold">المحادثة</span></div></div>
                                 <div class="border-t pt-6"><div class="flex justify-between items-center mb-4"><i class="fas fa-clock w-5 h-5 text-gray-400"></i><span class="text-gray-700 font-medium cairo-bold">حصة كاملة (60 دقيقة)</span></div><div class="space-y-3"><div class="bg-purple-50 p-4 rounded-lg border border-purple-200"><div class="flex justify-between items-center"><div class="flex items-center space-x-2 space-x-reverse"><i class="fas fa-dollar-sign w-4 h-4 text-purple-600"></i><span class="text-purple-600 font-bold text-lg cairo-bold">30 دولار</span></div><span class="text-gray-700 font-medium cairo-bold">4 حصص شهرياً</span></div></div><div class="bg-purple-50 p-4 rounded-lg border border-purple-200"><div class="flex justify-between items-center"><div class="flex items-center space-x-2 space-x-reverse"><i class="fas fa-dollar-sign w-4 h-4 text-purple-600"></i><span class="text-purple-600 font-bold text-lg cairo-bold">60 دولار</span></div><span class="text-gray-700 font-medium cairo-bold">8 حصص شهرياً</span></div></div></div></div>
                             </div>
-                            <a href="https://wa.me/2001040580208" target="_blank" rel="noopener noreferrer" class="block w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white py-3 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105 font-bold text-center cairo-bold">أشترك الآن</a>
+                            <a href="https://wa.me/2001040580208" target="_blank" rel="noopener noreferrer" class="button btn-purple w-full mt-6">أشترك الآن</a>
                         </div>
                     </div>
                     <!-- Course 3 -->
@@ -187,7 +191,7 @@
                                 <div class="space-y-3"><div class="flex items-center space-x-3 space-x-reverse"><div class="w-2 h-2 bg-emerald-600 rounded-full"></div><span class="text-gray-700 cairo-bold">حفظ بالتجويد</span></div><div class="flex items-center space-x-3 space-x-reverse"><div class="w-2 h-2 bg-emerald-600 rounded-full"></div><span class="text-gray-700 cairo-bold">تفسير الآيات</span></div><div class="flex items-center space-x-3 space-x-reverse"><div class="w-2 h-2 bg-emerald-600 rounded-full"></div><span class="text-gray-700 cairo-bold">أسباب النزول</span></div><div class="flex items-center space-x-3 space-x-reverse"><div class="w-2 h-2 bg-emerald-600 rounded-full"></div><span class="text-gray-700 cairo-bold">مراجعة مستمرة</span></div><div class="flex items-center space-x-3 space-x-reverse"><div class="w-2 h-2 bg-emerald-600 rounded-full"></div><span class="text-gray-700 cairo-bold">إجازات معتمدة</span></div></div>
                                 <div class="border-t pt-6"><div class="flex justify-between items-center mb-4"><i class="fas fa-clock w-5 h-5 text-gray-400"></i><span class="text-gray-700 font-medium cairo-bold">حصة كاملة (60 دقيقة)</span></div><div class="space-y-3"><div class="bg-emerald-50 p-4 rounded-lg border border-emerald-200"><div class="flex justify-between items-center"><div class="flex items-center space-x-2 space-x-reverse"><i class="fas fa-dollar-sign w-4 h-4 text-emerald-600"></i><span class="text-emerald-600 font-bold text-lg cairo-bold">30 دولار</span></div><span class="text-gray-700 font-medium cairo-bold">4 حصص شهرياً</span></div></div><div class="bg-emerald-50 p-4 rounded-lg border border-emerald-200"><div class="flex justify-between items-center"><div class="flex items-center space-x-2 space-x-reverse"><i class="fas fa-dollar-sign w-4 h-4 text-emerald-600"></i><span class="text-emerald-600 font-bold text-lg cairo-bold">50 دولار</span></div><span class="text-gray-700 font-medium cairo-bold">8 حصص شهرياً</span></div></div></div></div>
                             </div>
-                            <a href="https://wa.me/2001040580208" target="_blank" rel="noopener noreferrer" class="block w-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white py-3 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105 font-bold text-center cairo-bold">أشترك الآن</a>
+                            <a href="https://wa.me/2001040580208" target="_blank" rel="noopener noreferrer" class="button btn-green w-full mt-6">أشترك الآن</a>
                         </div>
                     </div>
                 </div>
@@ -218,25 +222,25 @@
                     <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
                         <div class="bg-gradient-to-r from-emerald-600 to-blue-600 p-8 text-white text-right"><div class="flex items-center justify-between mb-4"><div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center"><i class="fas fa-user-graduate w-8 h-8 text-white"></i></div><div class="flex-1 mr-4"><h3 class="text-2xl font-bold mb-1 cairo-bold">د. جهاد القاضي</h3><p class="text-white/80 cairo-bold">دكتوراه في طرق التدريس</p></div></div><div class="space-y-2 text-sm"><p class="text-white/90 cairo-bold">جامعة الأزهر الشريف</p><p class="text-white/90 cairo-bold">تخصص: اللغة العربية والقراءات القرآنية بالإجازات</p></div></div>
                         <div class="p-8 space-y-6"><div class="grid grid-cols-3 gap-4"><div class="text-center"><div class="text-2xl font-bold text-emerald-600 cairo-bold">10 سنوات</div><div class="text-sm text-gray-600 cairo-bold">خبرة</div></div><div class="text-center"><div class="text-2xl font-bold text-blue-600 cairo-bold">200+</div><div class="text-sm text-gray-600 cairo-bold">طالب</div></div><div class="text-center"><div class="flex items-center justify-center space-x-1 space-x-reverse"><i class="fas fa-star w-5 h-5 text-amber-400"></i><span class="text-2xl font-bold text-amber-600 cairo-bold">4.9</span></div><div class="text-sm text-gray-600 cairo-bold">تقييم</div></div></div>
-                        <div class="space-y-3"><h4 class="font-bold text-gray-900 text-right cairo-bold">الإنجازات والمؤهلات:</h4><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">الأولى على الدفعة</span></div><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">مدربة معلمات</span></div><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">حافظة للقرآن كاملاً بالتجويد</span></div><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">حاصلة على إجازات في القراءات</span></div></div><a href="https://wa.me/2001040580208" target="_blank" class="btn btn-primary w-full mt-4">احجز درس تجريبي</a></div>
+                        <div class="space-y-3"><h4 class="font-bold text-gray-900 text-right cairo-bold">الإنجازات والمؤهلات:</h4><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">الأولى على الدفعة</span></div><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">مدربة معلمات</span></div><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">حافظة للقرآن كاملاً بالتجويد</span></div><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">حاصلة على إجازات في القراءات</span></div></div><a href="https://wa.me/2001040580208" target="_blank" class="button btn-green w-full mt-4">احجز درس تجريبي</a></div>
                     </div>
                     <!-- Teacher Card 2 -->
                     <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
                         <div class="bg-gradient-to-r from-emerald-600 to-blue-600 p-8 text-white text-right"><div class="flex items-center justify-between mb-4"><div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center"><i class="fas fa-user-graduate w-8 h-8 text-white"></i></div><div class="flex-1 mr-4"><h3 class="text-2xl font-bold mb-1 cairo-bold">أ. حنان السيد</h3><p class="text-white/80 cairo-bold">ماجستير في الوسائل التعليمية الحديثة</p></div></div><div class="space-y-2 text-sm"><p class="text-white/90 cairo-bold">كلية التربية - جامعة الأزهر</p><p class="text-white/90 cairo-bold">تخصص: تعليم اللغة العربية وتحفيظ القرآن للأطفال</p></div></div>
                         <div class="p-8 space-y-6"><div class="grid grid-cols-3 gap-4"><div class="text-center"><div class="text-2xl font-bold text-emerald-600 cairo-bold">7 سنوات</div><div class="text-sm text-gray-600 cairo-bold">خبرة</div></div><div class="text-center"><div class="text-2xl font-bold text-blue-600 cairo-bold">130+</div><div class="text-sm text-gray-600 cairo-bold">طالب</div></div><div class="text-center"><div class="flex items-center justify-center space-x-1 space-x-reverse"><i class="fas fa-star w-5 h-5 text-amber-400"></i><span class="text-2xl font-bold text-amber-600 cairo-bold">4.7</span></div><div class="text-sm text-gray-600 cairo-bold">تقييم</div></div></div>
-                        <div class="space-y-3"><h4 class="font-bold text-gray-900 text-right cairo-bold">الإنجازات والمؤهلات:</h4><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">الأولى على الدفعة</span></div><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">خبيرة في تعليم الأطفال</span></div><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">حافظة للقرآن كاملاً بالتجويد والإجازات</span></div></div><a href="https://wa.me/2001040580208" target="_blank" class="btn btn-primary w-full mt-4">احجز درس تجريبي</a></div>
+                        <div class="space-y-3"><h4 class="font-bold text-gray-900 text-right cairo-bold">الإنجازات والمؤهلات:</h4><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">الأولى على الدفعة</span></div><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">خبيرة في تعليم الأطفال</span></div><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">حافظة للقرآن كاملاً بالتجويد والإجازات</span></div></div><a href="https://wa.me/2001040580208" target="_blank" class="button btn-green w-full mt-4">احجز درس تجريبي</a></div>
                     </div>
                     <!-- Teacher Card 3 -->
                     <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
                         <div class="bg-gradient-to-r from-emerald-600 to-blue-600 p-8 text-white text-right"><div class="flex items-center justify-between mb-4"><div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center"><i class="fas fa-user-graduate w-8 h-8 text-white"></i></div><div class="flex-1 mr-4"><h3 class="text-2xl font-bold mb-1 cairo-bold">أ. معاذ محمد</h3><p class="text-white/80 cairo-bold">ماجستير في علوم التربية</p></div></div><div class="space-y-2 text-sm"><p class="text-white/90 cairo-bold">كلية التربية - جامعة الأزهر</p><p class="text-white/90 cairo-bold">تخصص: التربية الإسلامية وطرق التدريس</p></div></div>
                         <div class="p-8 space-y-6"><div class="grid grid-cols-3 gap-4"><div class="text-center"><div class="text-2xl font-bold text-emerald-600 cairo-bold">9 سنوات</div><div class="text-sm text-gray-600 cairo-bold">خبرة</div></div><div class="text-center"><div class="text-2xl font-bold text-blue-600 cairo-bold">110+</div><div class="text-sm text-gray-600 cairo-bold">طالب</div></div><div class="text-center"><div class="flex items-center justify-center space-x-1 space-x-reverse"><i class="fas fa-star w-5 h-5 text-amber-400"></i><span class="text-2xl font-bold text-amber-600 cairo-bold">4.5</span></div><div class="text-sm text-gray-600 cairo-bold">تقييم</div></div></div>
-                        <div class="space-y-3"><h4 class="font-bold text-gray-900 text-right cairo-bold">الإنجازات والمؤهلات:</h4><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">متخصص في التربية الإسلامية</span></div><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">خبير بتدريس الأطفال</span></div><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">حافظ للقرآن كاملاً بالتجويد والإجازات</span></div></div><a href="https://wa.me/2001040580208" target="_blank" class="btn btn-primary w-full mt-4">احجز درس تجريبي</a></div>
+                        <div class="space-y-3"><h4 class="font-bold text-gray-900 text-right cairo-bold">الإنجازات والمؤهلات:</h4><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">متخصص في التربية الإسلامية</span></div><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">خبير بتدريس الأطفال</span></div><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">حافظ للقرآن كاملاً بالتجويد والإجازات</span></div></div><a href="https://wa.me/2001040580208" target="_blank" class="button btn-green w-full mt-4">احجز درس تجريبي</a></div>
                     </div>
                     <!-- Teacher Card 4 -->
                     <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
                         <div class="bg-gradient-to-r from-emerald-600 to-blue-600 p-8 text-white text-right"><div class="flex items-center justify-between mb-4"><div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center"><i class="fas fa-user-graduate w-8 h-8 text-white"></i></div><div class="flex-1 mr-4"><h3 class="text-2xl font-bold mb-1 cairo-bold">الشيخ محمد محمود</h3><p class="text-white/80 cairo-bold">ماجستير في العلوم القرآنية</p></div></div><div class="space-y-2 text-sm"><p class="text-white/90 cairo-bold">جامعة الأزهر الشريف</p><p class="text-white/90 cairo-bold">تخصص: الفقه الإسلامي والعقيدة</p></div></div>
                         <div class="p-8 space-y-6"><div class="grid grid-cols-3 gap-4"><div class="text-center"><div class="text-2xl font-bold text-emerald-600 cairo-bold">8 سنوات</div><div class="text-sm text-gray-600 cairo-bold">خبرة</div></div><div class="text-center"><div class="text-2xl font-bold text-blue-600 cairo-bold">115+</div><div class="text-sm text-gray-600 cairo-bold">طالب</div></div><div class="text-center"><div class="flex items-center justify-center space-x-1 space-x-reverse"><i class="fas fa-star w-5 h-5 text-amber-400"></i><span class="text-2xl font-bold text-amber-600 cairo-bold">4.7</span></div><div class="text-sm text-gray-600 cairo-bold">تقييم</div></div></div>
-                        <div class="space-y-3"><h4 class="font-bold text-gray-900 text-right cairo-bold">الإنجازات والمؤهلات:</h4><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">محفظ قرآن معتمد</span></div><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">خطيب مسجد</span></div><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">حافظ للقرآن الكريم كاملاً</span></div><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">إجازات في القرآن الكريم</span></div></div><a href="https://wa.me/2001040580208" target="_blank" class="btn btn-primary w-full mt-4">احجز درس تجريبي</a></div>
+                        <div class="space-y-3"><h4 class="font-bold text-gray-900 text-right cairo-bold">الإنجازات والمؤهلات:</h4><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">محفظ قرآن معتمد</span></div><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">خطيب مسجد</span></div><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">حافظ للقرآن الكريم كاملاً</span></div><div class="flex items-center space-x-3 space-x-reverse"><i class="fas fa-check-circle w-5 h-5 text-emerald-600 flex-shrink-0"></i><span class="text-gray-700 cairo-bold">إجازات في القرآن الكريم</span></div></div><a href="https://wa.me/2001040580208" target="_blank" class="button btn-green w-full mt-4">احجز درس تجريبي</a></div>
                     </div>
                 </div>
             </div>
@@ -276,9 +280,16 @@
                             <div><label for="studentName" class="font-semibold block mb-1">اسم الطالب *</label><input type="text" id="studentName" class="w-full p-3 border border-gray-300 rounded-lg"></div>
                             <div><label for="studentAge" class="font-semibold block mb-1">عمر الطالب *</label><input type="number" id="studentAge" class="w-full p-3 border border-gray-300 rounded-lg"></div>
                             <div><label for="studentLanguage" class="font-semibold block mb-1">اللغة التي يتحدث بها *</label><select id="studentLanguage" class="w-full p-3 border border-gray-300 rounded-lg bg-white"><option>العربية</option><option>الإنجليزية</option><option>أخرى</option></select></div>
-                            <div><label for="studentCountry" class="font-semibold block mb-1">الجنسية والدولة *</label><input type="text" id="studentCountry" class="w-full p-3 border border-gray-300 rounded-lg"></div>
+                            <div><label for="studentCountry" class="font-semibold block mb-1">الدولة المقيم بها *</label><select id="studentCountry" class="w-full p-3 border border-gray-300 rounded-lg bg-white"></select></div>
+                            <div>
+                                <label for="parentPhone" class="font-semibold block mb-1">رقم الواتساب *</label>
+                                <div class="flex">
+                                    <span id="countryCode" class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-r-lg"></span>
+                                    <input type="tel" id="parentPhone" class="w-full p-3 border border-gray-300 rounded-l-lg" dir="ltr">
+                                </div>
+                            </div>
                             <div><label for="courseSelect" class="font-semibold block mb-1">البرنامج المفضل *</label><select id="courseSelect" class="w-full p-3 border border-gray-300 rounded-lg bg-white"><option>كورس ولد صالح يدعو له (مكثف)</option><option>تعليم اللغة العربية</option><option>تحفيظ القرآن الكريم</option><option>تصحيح تلاوة للنساء (مجاني)</option><option>دروس إسلامية للأطفال (مجاني)</option></select></div>
-                            <button type="submit" class="btn btn-secondary w-full text-lg text-center">احجز حصة مجانية</button>
+                            <button type="submit" class="button btn-free-lesson w-full text-lg text-center font-extrabold">احجز حصة مجانية</button>
                         </form>
                     </div>
 
@@ -297,7 +308,7 @@
                             <div class="text-center">
                                 <h3 class="text-xl font-bold text-primary mb-2">هل لديك استفسار سريع؟</h3>
                                 <p class="mb-4">تواصل معنا عبر الواتساب للحصول على رد فوري.</p>
-                                <a href="https://wa.me/2001040580208" target="_blank" class="btn btn-whatsapp font-bold">راسلنا على الواتساب</a>
+                                <a href="https://wa.me/2001040580208" target="_blank" class="button btn-whatsapp font-extrabold">راسلنا على الواتساب</a>
                             </div>
                         </div>
                     </div>
@@ -309,115 +320,92 @@
         <footer class="bg-gradient-to-br from-gray-900 to-gray-800 text-white">
             <div class="container mx-auto px-4 py-16">
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-                    <div class="space-y-6"><div class="flex items-center space-x-3 space-x-reverse"><img src="logo.jpg" alt="أكاديمية ورثة الكتاب" class="h-12 w-auto"><div class="text-right"><h3 class="text-xl font-bold cairo-bold text-secondary">أكاديمية ورثة الكتاب</h3><p class="text-sm text-gray-300 cairo-bold">للتعليم المتميز</p></div></div><p class="text-gray-300 leading-relaxed text-right cairo-bold">مؤسسة تعليمية رائدة في تعليم وتحفيظ القرآن الكريم ، واللغة العربية والعلوم الشرعية، بإشراف نخبة من اوائل المعلمين المؤهلين من خريجي الأزهر الشريف وكليات التربية.</p><div class="flex space-x-4 space-x-reverse justify-end"><a href="#" class="w-10 h-10 bg-gray-700 hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors duration-300"><i class="fab fa-facebook-f w-5 h-5"></i></a><a href="https://chat.whatsapp.com/KfwfzMb09Cv0hToHb5rt1f" target="_blank" class="w-10 h-10 bg-gray-700 hover:bg-green-500 rounded-full flex items-center justify-center transition-colors duration-300"><i class="fab fa-whatsapp w-5 h-5"></i></a><a href="https://www.youtube.com/@WrthetAlktabAcademy" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-700 hover:bg-red-600 rounded-full flex items-center justify-center transition-colors duration-300"><i class="fab fa-youtube w-5 h-5"></i></a></div></div>
+                    <div><h3 class="cairo-bold text-xl text-secondary mb-4">أكاديمية ورثة الكتاب</h3><p class="text-gray-400">مؤسسة تعليمية رائدة في تعليم وتحفيظ القرآن الكريم ، واللغة العربية والعلوم الشرعية، بإشراف نخبة من اوائل المعلمين المؤهلين من خريجي الأزهر الشريف وكليات التربية.</p></div>
                     <div><h4 class="text-lg font-bold mb-6 text-right cairo-bold">روابط سريعة</h4><ul class="space-y-3 text-right"><li><a href="#home" class="text-gray-300 hover:text-emerald-400 transition-colors duration-300 cairo-bold">الرئيسية</a></li><li><a href="#about" class="text-gray-300 hover:text-emerald-400 transition-colors duration-300 cairo-bold">عن الأكاديمية</a></li><li><a href="#courses" class="text-gray-300 hover:text-emerald-400 transition-colors duration-300 cairo-bold">برامجنا</a></li><li><a href="#teachers" class="text-gray-300 hover:text-emerald-400 transition-colors duration-300 cairo-bold">المعلمون</a></li></ul></div>
-                    <div><h4 class="text-lg font-bold mb-6 text-right cairo-bold">برامجنا التعليمية</h4><ul class="space-y-3 text-right"><li><a href="#courses" class="text-gray-300 hover:text-emerald-400 transition-colors duration-300 cairo-bold">كورس ولد صالح يدعو له (مكثف)</a></li><li><a href="#courses" class="text-gray-300 hover:text-emerald-400 transition-colors duration-300 cairo-bold">تعليم اللغة العربية</a></li><li><a href="#courses" class="text-gray-300 hover:text-emerald-400 transition-colors duration-300 cairo-bold">تحفيظ القرآن الكريم</a></li><li><a href="#courses" class="text-gray-300 hover:text-emerald-400 transition-colors duration-300 cairo-bold">دورات مجانية</a></li></ul></div>
-                    <div><h4 class="text-lg font-bold mb-6 text-right cairo-bold">اشترك في نشرتنا</h4><p class="text-gray-300 mb-4 text-right cairo-bold">احصل على آخر الأخبار والعروض التعليمية</p><form class="flex flex-col sm:flex-row gap-2"><input type="email" placeholder="أدخل بريدك الإلكتروني" class="flex-1 px-4 py-3 rounded-lg text-gray-900 text-right cairo-bold"><button class="btn btn-primary">اشتراك</button></form></div>
+                    <div>
+                        <h3 class="cairo-bold text-xl text-secondary mb-4">تابعنا على</h3>
+                        <div class="space-y-3">
+                             <a href="https://chat.whatsapp.com/KfwfzMb09Cv0hToHb5rt1f" target="_blank" class="flex items-center gap-3 text-gray-300 hover:text-white">
+                                <i class="fab fa-whatsapp text-xl" style="color: #25D366;"></i>
+                                <span>تابعنا على جروب الواتساب</span>
+                            </a>
+                             <a href="https://www.youtube.com/@WrthetAlktabAcademy" target="_blank" class="flex items-center gap-3 text-gray-300 hover:text-white">
+                                <i class="fab fa-youtube text-xl" style="color: #FF0000;"></i>
+                                <span>تابعنا على قناتنا على اليوتيوب</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div><h4 class="text-lg font-bold mb-6 text-right cairo-bold">اشترك في نشرتنا</h4><p class="text-gray-300 mb-4 text-right cairo-bold">احصل على آخر الأخبار والعروض التعليمية</p><form class="flex flex-col sm:flex-row gap-2"><input type="email" placeholder="أدخل بريدك الإلكتروني" class="flex-1 px-4 py-3 rounded-lg text-gray-900 text-right cairo-bold"><button class="button bg-teal-600 hover:bg-teal-700">اشتراك</button></form></div>
                 </div>
                 <div class="border-t border-gray-700 pt-8"><div class="flex flex-col md:flex-row justify-between items-center text-center md:text-right"><div class="text-gray-300 mb-4 md:mb-0"><p class="cairo-bold">© 2025 أكاديمية ورثة الكتاب. جميع الحقوق محفوظة.</p></div><div class="flex space-x-6 space-x-reverse"><a href="#" class="text-gray-300 hover:text-emerald-400 transition-colors duration-300 cairo-bold">سياسة الخصوصية</a><a href="#" class="text-gray-300 hover:text-emerald-400 transition-colors duration-300 cairo-bold">شروط الاستخدام</a></div></div></div>
             </div>
         </footer>
     </main>
     <script>
-        document.getElementById('bookingForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const name = document.getElementById('studentName').value;
-            const age = document.getElementById('studentAge').value;
-            const language = document.getElementById('studentLanguage').value;
-            const country = document.getElementById('studentCountry').value;
-            const course = document.getElementById('courseSelect').value;
+        document.addEventListener('DOMContentLoaded', function() {
+            const countryData = [
+                { name: 'مصر', code: '+20' }, { name: 'السعودية', code: '+966' }, { name: 'الإمارات', code: '+971' },
+                { name: 'الكويت', code: '+965' }, { name: 'قطر', code: '+974' }, { name: 'البحرين', code: '+973' },
+                { name: 'عمان', code: '+968' }, { name: 'الأردن', code: '+962' }, { name: 'لبنان', code: '+961' },
+                { name: 'سوريا', code: '+963' }, { name: 'العراق', code: '+964' }, { name: 'اليمن', code: '+967' },
+                { name: 'المغرب', code: '+212' }, { name: 'الجزائر', code: '+213' }, { name: 'تونس', code: '+216' },
+                { name: 'ليبيا', code: '+218' }, { name: 'السودان', code: '+249' }, { name: 'المملكة المتحدة', code: '+44' },
+                { name: 'الولايات المتحدة', code: '+1' }, { name: 'كندا', code: '+1' }, { name: 'ألمانيا', code: '+49' },
+                { name: 'فرنسا', code: '+33' }, { name: 'إيطاليا', code: '+39' }, { name: 'إسبانيا', code: '+34' },
+                { name: 'هولندا', code: '+31' }, { name: 'السويد', code: '+46' }, { name: 'النرويج', code: '+47' },
+                { name: 'تركيا', code: '+90' }, { name: 'باكستان', code: '+92' }, { name: 'الهند', code: '+91' },
+                { name: 'ماليزيا', code: '+60' }, { name: 'إندونيسيا', code: '+62' }, { name: 'أستراليا', code: '+61' }
+            ];
 
-            const message = `
-                *طلب حجز حصة مجانية جديد*
-                -------------------------
-                *اسم الطالب:* ${name}
-                *عمر الطالب:* ${age}
-                *اللغة:* ${language}
-                *الجنسية/الدولة:* ${country}
-                *البرنامج المطلوب:* ${course}
-            `;
+            const countrySelect = document.getElementById('studentCountry');
+            const countryCodeSpan = document.getElementById('countryCode');
 
-            const whatsappUrl = `https://wa.me/2001040580208?text=${encodeURIComponent(message.trim())}`;
+            countryData.forEach(country => {
+                const option = document.createElement('option');
+                option.value = country.code;
+                option.textContent = country.name;
+                countrySelect.appendChild(option);
+            });
+
+            countrySelect.addEventListener('change', function() {
+                countryCodeSpan.textContent = this.value;
+            });
             
-            window.open(whatsappUrl, '_blank');
+            // Set initial value
+            countryCodeSpan.textContent = countrySelect.value;
+
+
+            document.getElementById('bookingForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                const name = document.getElementById('studentName').value;
+                const age = document.getElementById('studentAge').value;
+                const language = document.getElementById('studentLanguage').value;
+                const country = document.getElementById('studentCountry').options[document.getElementById('studentCountry').selectedIndex].text;
+                const phoneCode = document.getElementById('countryCode').textContent;
+                const phoneNumber = document.getElementById('parentPhone').value;
+                const fullPhoneNumber = phoneCode + phoneNumber;
+                const course = document.getElementById('courseSelect').value;
+
+                const message = `
+                    *طلب حجز حصة مجانية جديد*
+                    -------------------------
+                    *اسم الطالب:* ${name}
+                    *عمر الطالب:* ${age}
+                    *اللغة:* ${language}
+                    *الدولة:* ${country}
+                    *رقم الواتساب:* ${fullPhoneNumber}
+                    *البرنامج المطلوب:* ${course}
+                `;
+
+                const whatsappUrl = `https://wa.me/2001040580208?text=${encodeURIComponent(message.trim())}`;
+                
+                window.open(whatsappUrl, '_blank');
+            });
         });
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
