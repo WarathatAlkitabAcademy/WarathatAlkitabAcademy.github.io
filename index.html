@@ -58,6 +58,7 @@
         }
         .button:hover {
             transform: scale(1.03);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
         }
         .button:active {
             transform: scale(0.98);
@@ -90,7 +91,7 @@
                 <img src="logo.jpg" alt="شعار أكاديمية ورثة الكتاب" class="h-16 w-16">
                 <div class="text-right">
                     <h1 class="text-xl cairo-extrabold text-teal-700">أكــاديمية ورثــة الـكتاب</h1>
-                    <p class="text-xs text-gray-500">لتعليم اللغة العربية والقرآن الكريم</p>
+                    <p class="text-xs text-gray-500">لتعليم اللغة العربية وتحفيظ القرآن الكريم والعلوم الشرعية</p>
                 </div>
             </a>
             <nav class="hidden lg:flex items-center space-x-8 space-x-reverse text-lg">
@@ -147,6 +148,28 @@
                     <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:-translate-y-2 transition-transform"><div class="text-orange-500 text-4xl mb-3"><i class="fas fa-medal"></i></div><h3 class="text-xl font-bold text-teal-700">أوائل الخريجين</h3><p>نخبة من المعلمين المتفوقين أكاديمياً مع سجل حافل بالإنجازات.</p></div>
                     <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:-translate-y-2 transition-transform"><div class="text-orange-500 text-4xl mb-3"><i class="fas fa-book-reader"></i></div><h3 class="text-xl font-bold text-teal-700">إجازات في القراءات</h3><p>معلمون مجازون في القراءات القرآنية المختلفة بأسانيد معتمدة.</p></div>
                     <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:-translate-y-2 transition-transform"><div class="text-orange-500 text-4xl mb-3"><i class="fas fa-chalkboard-teacher"></i></div><h3 class="text-xl font-bold text-teal-700">تدريس تفاعلي</h3><p>أساليب تعليمية حديثة تجمع بين الأصالة والمعاصرة.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Message Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="section-title text-right">رسالتنا في التعليم</h2>
+                        <p class="text-lg text-gray-700 mb-6 text-right">نسعى لتقديم تعليم متميز يجمع بين الأصالة والمعاصرة، من خلال برامج تعليمية شاملة ومتطورة وحديثة في اللغة العربية وتحفيظ القرآن الكريم، بإشراف نخبة من المعلمين المؤهلين من خريجي كليات الأزهر الشريف وكليات التربية.</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center text-lg"><i class="fas fa-check-circle text-teal-500 ml-3"></i><span>معلمون من أوائل خريجي كليات الأزهر الشريف</span></li>
+                            <li class="flex items-center text-lg"><i class="fas fa-check-circle text-teal-500 ml-3"></i><span>إجازات معتمدة في القراءات القرآنية المختلفة</span></li>
+                            <li class="flex items-center text-lg"><i class="fas fa-check-circle text-teal-500 ml-3"></i><span>تعليم القرآن مع التفسير وأسباب النزول</span></li>
+                            <li class="flex items-center text-lg"><i class="fas fa-check-circle text-teal-500 ml-3"></i><span>تعليم اللغة العربية من الحروف إلى الإتقان</span></li>
+                            <li class="flex items-center text-lg"><i class="fas fa-check-circle text-teal-500 ml-3"></i><span>متابعة فردية لكل طالب وطالبة</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="about.jpg" alt="صورة معلم يدرس" class="rounded-2xl shadow-xl w-full">
+                    </div>
                 </div>
             </div>
         </section>
@@ -320,16 +343,18 @@
         <footer class="bg-gradient-to-br from-gray-900 to-gray-800 text-white">
             <div class="container mx-auto px-4 py-16">
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-                    <div><h3 class="cairo-bold text-xl text-secondary mb-4">أكاديمية ورثة الكتاب</h3><p class="text-gray-400">مؤسسة تعليمية رائدة في تعليم وتحفيظ القرآن الكريم ، واللغة العربية والعلوم الشرعية، بإشراف نخبة من اوائل المعلمين المؤهلين من خريجي الأزهر الشريف وكليات التربية.</p></div>
+                    <div><h3 class="cairo-bold text-xl text-orange-400 mb-4">أكاديمية ورثة الكتاب</h3><p class="text-gray-400">مؤسسة تعليمية رائدة في تعليم وتحفيظ القرآن الكريم ، واللغة العربية والعلوم الشرعية، بإشراف نخبة من اوائل المعلمين المؤهلين من خريجي الأزهر الشريف وكليات التربية.</p></div>
                     <div><h4 class="text-lg font-bold mb-6 text-right cairo-bold">روابط سريعة</h4><ul class="space-y-3 text-right"><li><a href="#home" class="text-gray-300 hover:text-emerald-400 transition-colors duration-300 cairo-bold">الرئيسية</a></li><li><a href="#about" class="text-gray-300 hover:text-emerald-400 transition-colors duration-300 cairo-bold">عن الأكاديمية</a></li><li><a href="#courses" class="text-gray-300 hover:text-emerald-400 transition-colors duration-300 cairo-bold">برامجنا</a></li><li><a href="#teachers" class="text-gray-300 hover:text-emerald-400 transition-colors duration-300 cairo-bold">المعلمون</a></li></ul></div>
                     <div>
-                        <h3 class="cairo-bold text-xl text-secondary mb-4">تابعنا على</h3>
+                        <h3 class="cairo-bold text-xl text-orange-400 mb-4">تابعنا على</h3>
                         <div class="space-y-3">
                              <a href="https://chat.whatsapp.com/KfwfzMb09Cv0hToHb5rt1f" target="_blank" class="flex items-center gap-3 text-gray-300 hover:text-white">
                                 <i class="fab fa-whatsapp text-xl" style="color: #25D366;"></i>
                                 <span>تابعنا على جروب الواتساب</span>
                             </a>
-                             
+                             <a href="https://www.youtube.com/@WrthetAlktabAcademy" target="_blank" class="flex items-center gap-3 text-gray-300 hover:text-white">
+                                <i class="fab fa-youtube text-xl" style="color: #FF0000;"></i>
+                                <span>تابعنا على قناتنا على اليوتيوب</span>
                             </a>
                         </div>
                     </div>
@@ -404,16 +429,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
